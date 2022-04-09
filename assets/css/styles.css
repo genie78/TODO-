@@ -7,7 +7,7 @@ html, body {
 
 div.main-container {
     width: 336px;
-    height: 236px;
+    height: auto;
     margin: auto;
     border: 1px solid #C4C4C4;
 }
@@ -29,18 +29,39 @@ h1.todo-h1 {
     font-size: 26px;
     line-height: 30.47px;
 }
+
+button.sort-button {
+    transition: background-color 1s;
+}
+
+button.sort-button:hover {
+    background-color: #9953F1;
+}
 /* input div */
 
 div.input-div {
     border: 1px solid #C4C4C4;
     border-radius: 10px;
+    /* display: flex;
+    flex-direction: column;
+     */
 }
 
-button.close-button {
+div.error-div > p{
+    color: red;
+}
+
+button.close-button, button.remove-button {
     position: relative;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    transition: bacground-color 1s, color 1s;
+}
+
+button.close-button:hover, button.remove-button:hover {
+    background-color: #833AE0;
+    color: #fff;
 }
 
 /* add button */

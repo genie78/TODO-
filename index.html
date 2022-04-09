@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO</title>
     <meta name="description" content="To make a list of TODOs' in a web page">
+    <link rel="icon" type="image/x-icon" href="./assets/images/list-logo.png">
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body class="d-flex">
     <div class="main-container rounded p-0">
@@ -17,10 +19,10 @@
         <div class="second-container">
             <h1 class="todo-h1 text-center">TO-DO List</h1>
         
-            <div class="d-flex justify-content-end sort-button">
-                <button type="button" class="btn btn-light"><img src="./assets/images/sort.png" alt="sort"></button>
+            <div class="d-flex justify-content-end mb-2 sort-button-div">
+                <button type="button" class="sort-button btn btn-white"><img src="./assets/images/sort.png" alt="sort"></button>
             </div>
-        
+
             <div class="input-group mb-3 input-div">
                 <input type="text" class="form-control border-0" >
                 
@@ -34,9 +36,13 @@
             <div class="w-100 text-center">
                 <button class="add-button "><span class="plus-icon ">+</span> <span class="add-text">Add</span></button> 
             </div>
+
+            <div class="error-div text-center m-0 p-0">
+                <p>Please, enter something.</p>
+            </div>
         </div>
     </div>
-
+    <script src="./assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>
