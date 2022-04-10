@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let listItem = $('input');
+    let listItem = $('.main-input');
     let inputDiv = $('.input-div');
     let errorDiv = $('.error-div');
     let todoList = [];
@@ -15,7 +15,7 @@ $(document).ready(function () {
         }else {
             let newDiv = $('<div>');
             newDiv.attr('value', listItem.val().toLowerCase());
-            newDiv.addClass('input-group input-div border-0');
+            newDiv.addClass(`input-group input-div border-0 ${listItem.val().toLowerCase()}`);
             inputDiv.append(newDiv);
 
             newDiv.append(
@@ -27,6 +27,7 @@ $(document).ready(function () {
                     </button>
                 </div>`
             );
+            todoList.push(listItem.val().toLowerCase());
             clearInput();
         }
         listItem.focus();
@@ -47,28 +48,18 @@ $(document).ready(function () {
 
     const sortList = () => {
         clearInput();
+        todoList.sort();
 
         for (let i of $('div')){
             let targetDivsValue = i.getAttribute('value');
-            if (targetDivsValue != undefined){
-                if (todoList.indexOf(targetDivsValue) == '-1'){
-                    todoList.push(targetDivsValue);
-                    console.log(targetDivsValue);
-                }
+            if ((targetDivsValue != undefined) || (targetDivsValue != null)){
+                $(`input.${targetDivsValue}`).val(todoList[indexOfArr]);                
+                indexOfArr+=1;
             }
-        }
-        todoList.sort();
-                
-        for (let i of $('div')){
-            let targetDivsValue = i.getAttribute('value');
-            if (targetDivsValue != undefined){
-                i.setAttribute('value', todoList[indexOfArr]);
-                $(`.${targetDivsValue}`).val(todoList[indexOfArr]);
-                indexOfArr++;
-            }
-        }
+        }   
+        indexOfArr = 0;
     }
-    
+
     $(document).on('click', 'button.remove-button' , removeFromList);
     $('.add-button').on('click', addToList);
     $('.close-button').on('click', clearInput);
