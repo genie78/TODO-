@@ -42,9 +42,6 @@ button.sort-button:hover {
 div.input-div {
     border: 1px solid #C4C4C4;
     border-radius: 10px;
-    /* display: flex;
-    flex-direction: column;
-     */
 }
 
 div.error-div > p{
@@ -74,7 +71,6 @@ button.add-button {
     background-color: #833AE0;
     color: #fff;
     padding: 0;
-    transition: background-color 1s;
 }
 
 span.plus-icon {
@@ -85,6 +81,7 @@ span.plus-icon {
     justify-content: center;
     align-items: center;
     background-color: #9953F1;
+    transition: all 1s;
 }
 
 span.add-text {
@@ -93,6 +90,9 @@ span.add-text {
     left: 5px;
 }
 
-button.add-button:hover {
+button.add-button:hover  span.plus-icon{
     background-color: #9953F1;
+    border-radius: 71px;
+    width: 150px;
+    color: #9953F1;
 }
